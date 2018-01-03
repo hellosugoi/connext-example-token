@@ -6,7 +6,7 @@ Example repo for working with the [Connext](https://connext.network/) token vaul
 Prerequisites:
 -----
 
-Before beginning, you need to get Connext credentials from [here](). You must also create an account with a [mnemonic](https://iancoleman.io/bip39/) and populate it with [Rinkeby Ether](https://faucet.rinkeby.io/). How to are shown further below.
+Before beginning, you need to get Connext credentials by loggin [here](https://app.connext.network/login). You must also create an account with a [mnemonic](https://iancoleman.io/bip39/) and populate it with [Rinkeby Ether](https://faucet.rinkeby.io/). How to are shown further below.
 
 #### Truffle installed
 
