@@ -68,15 +68,19 @@ Once everything is installed, you will need to configure `truffle.js` to work wi
 2. Enter your mnemonic (`${mnemonic}`)
 3. Enter your Infura Key
 
-3. Enter token vault address `${vault_address}`
-5. Enter amount in Wie, like 1 ether (`1000000000000000000`)
-6. In the terminal: `truffle migrate --network rinkeby`
-7. Once completed you need to get the address of your token. This can be grabbed from the `./build/contracts/ConnextExampleToken.json` file. The value at the key "networks.4.address" is the Rinkeby token address (`${token_address}`)
+Now you can deploy the contract to Rinkeby.
 
-Once you have everything, you can finally start the server
+1. In the terminal: `truffle migrate --network rinkeby`
+2. Once completed you need to get the address of your token. This can be grabbed from the `./build/contracts/ConnextExampleToken.json` file. The value at the key "networks.4.address" is the Rinkeby token address (`${token_address}`)
+
+Finall, you can finally start the server and start moving tokens around.
 
 1. In the terminal: `npm run dev`
 2. Open the browser and go to `localhost:3000`
+3. Enter token vault address `${vault_address}` you created on Connext
+4. Enter amount in Wie, like 1 ether (`1000000000000000000`)
+
+
 
 Tutorial:
 ------
