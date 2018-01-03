@@ -78,30 +78,33 @@ Finall, you can finally start the server and start moving tokens around.
 1. In the terminal: `npm run dev`
 2. Open the browser and go to `localhost:3000`
 3. Enter token vault address `${vault_address}` you created on Connext
-4. Enter amount in Wie, like 1 ether (`1000000000000000000`)
-
-
+4. Enter amount in Wie (`6000000000000000000`), for 6 tokens
 
 Tutorial:
 ------
 
 Once you have everything setup, will be able to send your tokens to any address. To work with Connext, you need to create a vault for your user. A `${vault_address}` is created for every unique email, so you can check if the user has a vault by calling the [find customer](https://connextproject.github.io/slate/?javascript#find-customer) endpoint. If it does not, and its likely that it does not, you will need to use the [create token](https://connextproject.github.io/slate/?javascript#create-customer) endpoint to create a vault. Once created, you send tokens to the `${vault_address}` via the website at `localhost:3000`.
 
-Enter that value into the webpage and an amount of token to send in WEI. Metamask will pop up and click accept transaction. Once the transaction is completed, you will get an alert for the website. Check that the balance is correct by calling the [Check Token Balance](https://connextproject.github.io/slate/?javascript#get-token-balance) endpoint. You can also check by going to the following endpoints on Etherscan. Replace values with the ones you have.
+Enter that value into the webpage and an amount of token to send in Wei. Metamask will pop up and click accept transaction. Once the transaction is completed, you will get an alert for the website. Check that the balance is correct by calling the [Check Token Balance](https://connextproject.github.io/slate/?javascript#get-token-balance) endpoint. If you followed the example from the previous section, you would see `6000000000000000000` (5 token in ether units). You can also check by going to the following endpoints on Etherscan. Replace values with the ones that you created.
 
 1. Info for `${deploy_address}` : https://rinkeby.etherscan.io/address/<deploy_address>
 2. All token balances for `${token_address}` : https://rinkeby.etherscan.io/token/<token_address>#balances
 3. Token Balance for `${deploy_address}`: https://rinkeby.etherscan.io/token/<token_address>?a=<deploy_address>
 4. Token Balance for `${vault_address}`: https://rinkeby.etherscan.io/token/<token_address>?a=<vault_address>
 
-After successfully sending your tokens to the vault (`${vault_address}`), you can transfer them back (anywhere) by calling the [./scripts/transactVault](https://connextproject.github.io/slate/?javascript#transact-vault) function the users token vault on the blockchain. Again, this is not an http api call, its a transaction sent to the Ethereum network.
+As a saftey check:
+
+1. `${token_address}` should have `9994` tokens
+2. `${vault_address}` should `6` token or `6000000000000000000` in Wei
+
+The token vault (`${vault_address}`) should now have 5 token (`6000000000000000000` in Wei). You can transfer them back (anywhere) by calling the [./scripts/transactVault](https://connextproject.github.io/slate/?javascript#transact-vault) function the users token vault on the blockchain. Again, this is not an http api call, its a transaction sent to the Ethereum network.
 
 In the project, you can configure the `transactVault.js` file with the values for your project.
 
 1. from: address that deployed contract (`${deploy_address}`)
 2. vaultAddress: Vault for the specified user (`${vault_address}`)
 3. tokenContractAddress: Address of your token (`${token_address}`)
-4. recipientAddress: Address who will get tokens (`${deploy_address}`)
+4. recipientAddress: Address who will get tokens (`${token_address}`)
 5. amount: The amount of token to move in ether units like 0.5 ether (`500000000000000000`)
 
 Once those are populated you enter `truffle exec ./scripts/transactVault.js --network rinkeby` into the terminal and you will receive a transaction (`${transfer_tx}`). From here you can enter the `${transfer_tx}` into Etherscan.
@@ -110,6 +113,10 @@ Once those are populated you enter `truffle exec ./scripts/transactVault.js --ne
 
 Once that transaction is completed you can recheck the Etherscan endpoints from before and see that the values are updated.
 
+As a saftey check:
+
+1. `${token_address}` should have `9994.5` tokens
+2. `${vault_address}` should  `5.5` token or `500000000000000000` in Wei
 
 
 
