@@ -1,7 +1,7 @@
 Purpose:
 ------
 
-Example repo for working with the [Connext](https://connext.network/) token vault. For A full tutorial go [here](). This is a fork of the [truffle](http://truffleframework.com/) tutorial [token box](https://github.com/truffle-box/tutorialtoken-box) that uses [open zeppelin](https://openzeppelin.org/) smart contracts. The original blog post is linked [here](http://truffleframework.com/tutorials/robust-smart-contracts-with-openzeppelin).
+Example repo for working with the [Connext](https://connext.network/) token vault. For A full tutorial go [here](https://medium.com/hello-sugoi/connext-example-token-tutorial-2e5c7288d7c5). This is a fork of the [truffle](http://truffleframework.com/) tutorial [token box](https://github.com/truffle-box/tutorialtoken-box) that uses [open zeppelin](https://openzeppelin.org/) smart contracts. The original blog post is linked [here](http://truffleframework.com/tutorials/robust-smart-contracts-with-openzeppelin).
 
 Prerequisites:
 -----
